@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quotes/quote.dart';
 
 class QuoteCard extends StatelessWidget {
-
   final Quote quote;
   final Function() delete;
   QuoteCard({required this.quote, required this.delete});
@@ -10,7 +9,7 @@ class QuoteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
+      margin: const EdgeInsets.fromLTRB(16, 16, 16, 0),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
