@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     params = ModalRoute.of(context)!.settings.arguments;
     data = jsonDecode(jsonEncode(params));
-    print(data);
+    // print(data);
 
     return Scaffold(
       body: SafeArea(
@@ -40,6 +40,7 @@ class _HomeState extends State<Home> {
                   Text(
                     data['location'],
                     style: TextStyle(fontSize: 28, letterSpacing: 2),
+                    overflow: TextOverflow.fade,
                   )
                 ],
               ),
@@ -62,7 +63,9 @@ class _HomeState extends State<Home> {
               ),
               SizedBox(height: 30),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, "/");
+                  },
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll<Color>(Colors.blue),

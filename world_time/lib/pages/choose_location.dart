@@ -40,11 +40,16 @@ class _ChooseLocationState extends State<ChooseLocation> {
       ),
       body: ListView.builder(
           itemCount: locations.length,
-          itemBuilder: (location, index) {
+          itemBuilder: (context, i) {
             return Card(
               child: ListTile(
-                onTap: () {},
-                title: Text(locations[index]),
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, "/", arguments: {
+                    'url': locations[i]
+                  });
+
+                },
+                title: Text(locations[i]),
               ),
             );
           }),
