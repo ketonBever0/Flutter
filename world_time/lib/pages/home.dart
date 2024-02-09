@@ -38,9 +38,9 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    data['location'],
+                    data['location'].toString().replaceAll("/", "\n"),
                     style: TextStyle(fontSize: 28, letterSpacing: 2),
-                    overflow: TextOverflow.fade,
+                    textAlign: TextAlign.center,
                   )
                 ],
               ),
@@ -72,7 +72,18 @@ class _HomeState extends State<Home> {
                       padding: MaterialStateProperty.all<EdgeInsets>(
                           EdgeInsets.all(20))),
                   child: Text('Get My Location!',
-                      style: TextStyle(fontSize: 20, color: Colors.white)))
+                      style: TextStyle(fontSize: 20, color: Colors.white))),
+              SizedBox(height: 30),
+              IconButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/',
+                      arguments: {'url': data["location"]});
+                },
+                icon: FaIcon(
+                  Icons.sync,
+                  size: 40,
+                ),
+              ),
             ],
           ),
         ),
