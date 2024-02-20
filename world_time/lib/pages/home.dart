@@ -26,11 +26,16 @@ class _HomeState extends State<Home> {
           child: Column(
             children: <Widget>[
               TextButton.icon(
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStatePropertyAll<Color>(Colors.red),
+                  ),
                   onPressed: () {
                     Navigator.pushNamed(context, '/location');
                   },
                   icon: Icon(Icons.edit_location),
-                  label: Text('Change location')),
+                  label: Text('Change location',
+                      style: TextStyle(color: Colors.black))),
               SizedBox(
                 height: 20,
               ),
