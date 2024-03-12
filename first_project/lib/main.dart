@@ -1,3 +1,4 @@
+import 'package:first_project/components/PizzaCard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -89,23 +90,14 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Row(
+        child: Wrap(
           children: <Widget>[
-            FlutterLogo(),
-            Column(
-              children: [
-                Text("Pizza"),
-                Text("2500 Ft"),
-                Row(
-                  children: [
-                    Icon(Icons.star),
-                    Icon(Icons.star),
-                    Icon(Icons.star)
-                  ],
-                ),
-                ElevatedButton(onPressed: () {}, child: Text("Add"))
-              ],
-            )
+            PizzaCard(),
+            PizzaCard(),
+            PizzaCard(),
+            PizzaCard(),
+            PizzaCard(),
+            PizzaCard()
           ],
         ),
       ),
